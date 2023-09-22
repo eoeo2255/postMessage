@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe src="input.html" id="inputFrame" width="300" height="300"></iframe>
+    <iframe src="result.html" id="resultFrame" width="300" height="300"></iframe>
+
+    <script>
+        window.addEventListener('message', middle);
+
+        function middle(message){
+            resultFrame.contentWindow.postMessage(message.data);
+        }
+    </script>
+</body>
+</html>
